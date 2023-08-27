@@ -1,0 +1,77 @@
+(1)
+# Write a Python program that opens a file for input and prints the count of four letter words in it 
+
+f1=open("First.txt","r")
+s=f1.read()
+l=s.split()
+c=0
+for i in l:
+  if len(i)==4:
+    c=c+1
+print(c)
+f1.close()
+
+(2)
+# Write a Python program to create a dictionary of phone numbers and names of five persons. Display the cointents of the dictionary in alphabetical order of names 
+Pb=dict()
+for sub in range(5):
+  txt = input().split()
+  Pb[txt[0]] = txt[1] 
+print("\nThe Contents are as follows:-")
+for key,value in sorted(Pb.items()):
+  print (key,value).
+
+(3)
+# Write a program to check if a given string is a palindrome or not, without reversing the original string 
+def pal(s):
+  s1=""
+  for i in s:
+    s1=i+s1
+  if s1==s:
+    print("Its palindrome.")
+  else:
+    print("Not a palindrome.")
+
+x=input()
+pal(x)
+
+(4)
+#  Write a program that reads an integer N from the keyboard anf then calls a user defined function to compute and displays the sum of the numbers from N to (2*N ) if N is non negative. if n is negative then displays the sum of the numbers from (2* N) to N. The satrting and ending points are included in the sum 
+def abc(N):
+ s=0
+ if N > 0:
+  for i in range(N, 2*N+1):
+    s += i
+ else:
+  for i in range(2*N, N+1):
+    s += i
+ print(s)
+
+N=int(input())
+abc(N)
+
+(5)
+# Write a Python Program to raed numbers stored in a file and separate the even and odd numbers to two files named Even.txt and Odd.txt respectively. Display both the files 
+f1=open("First.txt","r")
+s=f1.read()
+l=s.split()
+for i in range(len(l)):
+  n = int(i) 
+  if (n % 2 == 0): 
+    f2 = open("Even.txt","a+") 
+    f2.write(str(n)) 
+    f2.write("\n") 
+  else: 
+    f3 = open("Odd.txt","a+") 
+    f3.write(str(n)) 
+    f3.write("\n") 
+f2.seek(0,0)
+f3.seek(0,0)
+s1=f2.read()
+s2=f3.read()
+print("The contennts of Even.txt:-",s1)
+print("The contennts of Odd.txt:-",s2)
+f1.close()
+f2.close()
+f3.close()
+
